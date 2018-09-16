@@ -51,8 +51,8 @@ window.renderStatistics = function (ctx, names, times) {
 
   for (var i = 0; i < names.length; i++) {
     ctx.fillStyle = '#000';
-    ctx.fillText(names[i], CLOUD_X + FONT_GAP + 90 * i, CLOUD_Y + CLOUD_HEIGHT - 3 * GAP);
-    ctx.fillText(Math.round(times[i]), CLOUD_X + FONT_GAP + 90 * i, CLOUD_Y + 3 * GAP_TITLE + (BAR_MAX_HEIGHT - BAR_MAX_HEIGHT * times[i] / maxTime));
+    ctx.fillText(names[i], CLOUD_X + FONT_GAP + (BAR_INTERVAL + BAR_WIDTH) * i, CLOUD_Y + CLOUD_HEIGHT - 3 * GAP);
+    ctx.fillText(Math.round(times[i]), CLOUD_X + FONT_GAP + (BAR_INTERVAL + BAR_WIDTH) * i, CLOUD_Y + 3 * GAP_TITLE + (BAR_MAX_HEIGHT - BAR_MAX_HEIGHT * times[i] / maxTime));
     renderBar(ctx, i, names[i], times[i], maxTime);
   }
 
